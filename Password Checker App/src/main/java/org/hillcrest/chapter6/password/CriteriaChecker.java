@@ -1,6 +1,10 @@
 package org.hillcrest.chapter6.password;
 
+/**
+ * Utility class that evaluates a password against specific criteria.
+ */
 public class CriteriaChecker {
+
     /**
      * Checks if a password meets certain conditions
      * @param password - the password inputted by the user
@@ -44,7 +48,17 @@ public class CriteriaChecker {
             return score;
         }
 
-        
+    /**
+     * Returns Weak, Moderate, or Strong based on the score
+     * @param score - the criteria score
+     * @return - the strength of a password
+     */
+    public static String determineStrength(int score) {
+           if (score >= 0 && score <= 2){return "Weak";}
+           else if (score == 3){return "Moderate";}
+           else if (score == 4 || score == 5){return "Strong";}
+           else {return "Not a valid score"; }
+        }
 
     }
 
