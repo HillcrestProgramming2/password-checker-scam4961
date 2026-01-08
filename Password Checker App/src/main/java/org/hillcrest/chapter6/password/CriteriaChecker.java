@@ -5,6 +5,13 @@ package org.hillcrest.chapter6.password;
  */
 public class CriteriaChecker {
 
+    private static boolean hasLength;
+    private static boolean hasLowerCase;
+    private static boolean hasUpperCase;
+    private static boolean hasNumber;
+    private static boolean hasSpecial;
+
+
     /**
      * Checks if a password meets certain conditions
      * @param password - the password inputted by the user
@@ -12,11 +19,7 @@ public class CriteriaChecker {
      */
     public static int evaluateCriteria(String password) {
         int score = 0;
-        boolean hasLength = false;
-        boolean hasLowerCase = false;
-        boolean hasUpperCase = false;
-        boolean hasNumber = false;
-        boolean hasSpecial = false;
+
 
         String special = "!@#$%^&*()-+=";
 
@@ -47,6 +50,25 @@ public class CriteriaChecker {
 
             return score;
         }
+    public static boolean isHasLength() {
+        return hasLength;
+    }
+
+    public static boolean isHasLowerCase() {
+        return hasLowerCase;
+    }
+
+    public static boolean isHasUpperCase() {
+        return hasUpperCase;
+    }
+
+    public static boolean isHasNumber() {
+        return hasNumber;
+    }
+
+    public static boolean isHasSpecial() {
+        return hasSpecial;
+    }
 
     /**
      * Returns Weak, Moderate, or Strong based on the score
@@ -61,6 +83,11 @@ public class CriteriaChecker {
         }
 
     }
+
+
+
+
+
 
 
 
