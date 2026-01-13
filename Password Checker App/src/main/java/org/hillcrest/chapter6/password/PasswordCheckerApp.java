@@ -21,11 +21,15 @@ public class PasswordCheckerApp {
         //Check strength
         int score = CriteriaChecker.evaluateCriteria(password);
 
+        String strength = CriteriaChecker.determineStrength(score);
+
+        String feedback = FeedbackGenerator.generateFeedback(password);
+
         //Provide user feedback based on the strength
         System.out.printf("""
                 Password Strength: %s (%d/5)
                 %s
-                """,CriteriaChecker.determineStrength(score),score,FeedbackGenerator.generateFeedback(password));
+                """,strength,score,feedback);
 
 
 

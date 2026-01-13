@@ -12,6 +12,26 @@ public class CriteriaChecker {
     private static boolean hasSpecial;
 
 
+    public static boolean isHasLength() {
+        return hasLength;
+    }
+
+    public static boolean isHasLowerCase() {
+        return hasLowerCase;
+    }
+
+    public static boolean isHasUpperCase() {
+        return hasUpperCase;
+    }
+
+    public static boolean isHasNumber() {
+        return hasNumber;
+    }
+
+    public static boolean isHasSpecial() {
+        return hasSpecial;
+    }
+
     /**
      * Checks if a password meets certain conditions
      * @param password - the password inputted by the user
@@ -42,32 +62,13 @@ public class CriteriaChecker {
                 hasNumber = true;
             }
         }
-            // increases the score by one for each condition it has met
-            if (hasLowerCase) {score += 1;}
-            if (hasUpperCase) {score += 1;}
-            if (hasNumber) {score += 1;}
-            if (hasSpecial) {score += 1;}
+        // increases the score by one for each condition it has met
+        if (hasLowerCase) {score += 1;}
+        if (hasUpperCase) {score += 1;}
+        if (hasNumber) {score += 1;}
+        if (hasSpecial) {score += 1;}
 
-            return score;
-        }
-    public static boolean isHasLength() {
-        return hasLength;
-    }
-
-    public static boolean isHasLowerCase() {
-        return hasLowerCase;
-    }
-
-    public static boolean isHasUpperCase() {
-        return hasUpperCase;
-    }
-
-    public static boolean isHasNumber() {
-        return hasNumber;
-    }
-
-    public static boolean isHasSpecial() {
-        return hasSpecial;
+        return score;
     }
 
     /**
